@@ -1,0 +1,572 @@
+
+        @import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap');/* Importa a fonte Quicksand do Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Jim+Nightshade&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+        * {
+            box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho total do elemento */
+        }
+        
+        :root {
+            --primary-color: #22190c; /* Cor primária (azul claro) */
+            --secondary-color: #22190c; /* Cor secundária (cinza claro) */
+            --tertiary-color: #946e36; /* Cor terciária (cinza médio) */
+            --bg-color: #fff0da; /* Cor de fundo (cinza escuro) */
+        }
+        
+        body {
+            margin: 0; /* Remove a margem padrão do body */
+            background: var(--bg-color); /* Define a cor de fundo usando uma variável */
+            color: #22190c; /* Define a cor do texto padrão usando uma variável */
+            font-family: "Goudy Bookletter 1911", serif; /* Define a família da fonte */
+           
+            
+        }
+        
+        header {
+            padding: 2rem 0rem; /* Espaçamento interno (2rem em cima/baixo, 1rem nos lados) */
+            display: flex; /* Habilita o layout flexbox */
+            align-items: center; /* Alinha os itens verticalmente ao centro */
+            justify-content: space-around; /* Distribui os itens com espaço ao redor */
+            position: sticky; /* Mantém o cabeçalho fixo no topo ao rolar a página */
+            top: 1; /* Posição do topo quando sticky */
+            background: var(--bg-color); /* Cor de fundo do cabeçalho */
+            z-index: 10; /* Define a ordem de empilhamento para ficar sobre outros elementos */
+            border-bottom: 1px solid var(--bg-color); /* Adiciona uma borda inferior */
+            gap: 1rem; /* Espaçamento entre os elementos flex */
+        }
+
+    
+        
+        header h1 {
+            font-size: 1.5rem; /* Tamanho da fonte */
+            margin: 0; /* Remove a margem padrão */
+            font-weight: 700; /* Peso da fonte (médio) */
+            white-space: nowrap; /* Impede a quebra de linha do texto */
+        }
+        
+        div input {
+            padding: 0.375rem 0.75rem; /* Espaçamento interno */
+            border-radius: 2rem; /* Arredonda as bordas */
+            border: 1px solid var(--tertiary-color); /* Define a borda */
+            background: var(--bg-color); /* Cor de fundo */
+            font-family: inherit; /* Herda a família da fonte do elemento pai */
+            font-size: 1.5rem; /* Tamanho da fonte */
+            transition: all 0.2s ease; /* Adiciona uma transição suave para todas as propriedades */
+            width: 30rem; /* Largura do input */
+            color: var(--secondary-color); /* Cor do texto digitado */
+            margin-right: 0rem; /* Margem à direita */
+        }
+        
+        div input::placeholder {
+            font-size: 1.2rem; /* Tamanho da fonte do placeholder */
+            font-weight: 300; /* Peso da fonte do placeholder */
+            color: #2c251a; /* Cor do texto do placeholder */
+        }
+        
+        div input:focus {
+            outline: none; /* Remove a borda de foco padrão */
+            border-color: var(--bg-color); /* Muda a cor da borda ao focar */
+            box-shadow: 0 0 0 0.1rem var(--tertiary-color); /* Adiciona uma sombra de caixa para indicar foco */
+        }
+        
+        #botao-busca {
+            padding: 1rem 2rem; /* Espaçamento interno */
+            border-radius: 2rem; /* Arredonda as bordas */
+            border: none; /* Remove a borda padrão */
+            cursor: pointer; /* Muda o cursor para uma mão ao passar por cima */
+            font-family: inherit; /* Herda a família da fonte */
+            font-weight: 500; /* Peso da fonte */
+            font-size: 1rem; /* Tamanho da fonte */
+            white-space: nowrap; /* Impede a quebra de linha do texto */
+            transition: background-color 0.2s ease, color 0.2s ease; /* Transição suave para cor de fundo e cor do texto */
+            background-color: var(--bg-color); /* Cor de fundo */
+            color: var(--secondary-color); /* Cor do texto */
+            border: 1px solid var(--bg-color); /* Adiciona uma borda */
+        }
+        
+        #botao-busca:hover {
+            background-color: #755d35; /* Muda a cor de fundo ao passar o mouse */
+            color: var(--bg-color); /* Muda a cor do texto ao passar o mouse */
+            box-shadow: 0 0 0 0.1rem var(--primary-color); /* Adiciona uma sombra de caixa */
+        }
+        
+        #botao-busca:active {
+            transform: scale(0.98); /* Efeito de clique (diminui o tamanho) */
+        }
+        
+        main {
+            overflow-y: scroll; /* Adiciona uma barra de rolagem vertical se o conteúdo exceder a altura */
+            cursor: pointer; /* Muda o cursor para uma mão */
+        }
+        
+        article h2 {
+            margin-top: 0; /* Remove a margem superior */
+            font-weight: 600; /* Peso da fonte */
+            font-size: 1.6rem; /* Tamanho da fonte */
+            border-bottom: none; /* Sem borda inferior */
+            padding-bottom: 0; /* Sem espaçamento interno inferior */
+            margin-bottom: 0.25rem; /* Margem inferior */
+            color: var(--bg-color); /* Cor do texto */
+        }
+        
+        article p {
+            margin: 0.5rem 0; /* Margem superior e inferior */
+            line-height: 1.6; /* Altura da linha para melhor legibilidade */
+            font-size: 1rem; /* Tamanho da fonte */
+            margin-bottom: 0.5rem; /* Margem inferior */
+            color: var(--bg-color); /* Cor do texto */
+        }
+        
+        article p strong {
+            color: #fff0da; /* Cor do texto em negrito */
+            font-weight: 400; /* Peso da fonte */
+        }
+        
+        article a {
+            color: #fff0da; /* Cor do link */
+            text-decoration: none; /* Remove o sublinhado padrão */
+            font-weight: 200; /* Peso da fonte */
+        }
+        
+        article a:hover {
+            text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+        }
+        
+        .footer {
+            position: absolute; /* Posicionamento absoluto em relação ao elemento pai posicionado */
+            bottom: 0; /* Alinha na parte inferior */
+            left: 0; /* Alinha à esquerda */
+            width: 100%; /* Largura total */
+            color: var(--tertiary-color); /* Cor do texto */
+            background-color: var(--bg-color); /* Cor de fundo */
+            padding: 15px 20px; /* Espaçamento interno */
+            border-top: 1px solid #3c4043; /* Borda superior */
+            font-size: 0.8rem; /* Tamanho da fonte */
+        }
+        
+        .footer-location {
+            color: #9aa0a6; /* Cor do texto */
+            margin-bottom: 10px; /* Margem inferior */
+        }
+        
+        .footer-links {
+            list-style: none; /* Remove os marcadores da lista */
+            display: flex; /* Habilita o layout flexbox */
+            flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+            justify-content: center; /* Centraliza os itens horizontalmente */
+            gap: 20px; /* Espaçamento entre os links */
+        }
+        
+        .footer-links a {
+            color: var(--secondary-color); /* Cor do link */
+            text-decoration: none; /* Remove o sublinhado */
+            transition: color 0.2s; /* Transição suave para a cor */
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color); /* Muda a cor do link ao passar o mouse (variável não definida) */
+        }
+        
+        @media (max-width: 768px) {
+            header { /* Estilos para telas com largura máxima de 768px */
+                flex-direction: column; /* Organiza os itens do cabeçalho em coluna */
+                padding: 2rem; /* Reduz o espaçamento interno */
+            }
+        
+            header h1 { /* Estilos para o h1 no cabeçalho em telas menores */
+                text-align: center; /* Centraliza o texto */
+                margin-bottom: 2rem; /* Adiciona margem inferior */
+            }
+        
+            div input { /* Estilos para o input em telas menores */
+                width: 90vw; /* Largura baseada na largura da viewport */
+                font-size: 1.2rem; /* Reduz o tamanho da fonte */
+            }
+        
+            main { /* Estilos para o main em telas menores */
+                padding: 0 1rem; /* Adiciona espaçamento lateral */
+            }
+        
+            article:hover { /* Estilos para o article em telas menores */
+                transform: none; /* Remove o efeito de escala ao passar o mouse */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            header h1 { /* Estilos para o h1 em telas com largura máxima de 480px */
+                font-size: 1rem; /* Reduz ainda mais o tamanho da fonte */
+                max-width: 70%; /* Define uma largura máxima */
+                word-wrap: break-word; /* Permite a quebra de palavras longas */
+            }
+        
+            div input, /* Estilos para o input e seu placeholder em telas muito pequenas */
+            div input::placeholder {
+                font-size: 1rem; /* Reduz o tamanho da fonte */
+            }
+        
+            article h2 { /* Estilos para o h2 do article em telas muito pequenas */
+                font-size: 1.3rem; /* Reduz o tamanho da fonte */
+            }
+        
+            div { /* Estilos para a div do cabeçalho em telas muito pequenas */
+                display: flex; /* Habilita flexbox */
+                align-items: center; /* Alinha itens ao centro */
+                justify-content: center; /* Centraliza itens */
+                flex-direction: column; /* Organiza em coluna */
+                gap: 0.5rem; /* Espaçamento entre os itens */
+            }
+        
+            .footer { /* Estilos para o rodapé em telas muito pequenas */
+                display: none; /* Oculta o rodapé */
+            }
+        
+            button { /* Estilos para o botão em telas muito pequenas */
+                margin-top: 1rem; /* Adiciona margem no topo */
+            }
+        }
+
+       /* ---------------------------------- */
+/* 2. FRASE ANIMADA (SUBSTITUINDO MARQUEE) */
+/* ---------------------------------- */
+
+/* Define a animação de rolagem para a esquerda */
+@keyframes scroll-left {
+    0% {
+      transform: translateX(100%); /* Começa fora da tela à direita */
+    }
+    100% {
+      transform: translateX(-100%); /* Termina fora da tela à esquerda */
+    }
+  }
+  
+  /* Container que define a área visível e esconde o excesso */
+  .animated-phrase-container {
+      background-color: var(--primary-color);
+      color: var(--bg-color);
+      font-size: 1.2rem;
+      padding: 1rem 0;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden; /* ESSENCIAL: Esconde o conteúdo que está fora da área */
+      border-top: 2px solid var(--primary-color);
+      border-bottom: 2px solid var(--primary-color);
+      /* Garante que fique "anexado" (logo abaixo) do header */
+      margin-top: 3px; 
+      width: 100%;
+  }
+  
+  /* O conteúdo real que se move */
+  .animated-phrase-content {
+      display: inline-block; /* Permite que o texto tenha o tamanho necessário */
+      padding-left: 100%; /* Força o texto a começar completamente fora da tela */
+      animation: scroll-left 20s linear infinite; /* Aplica a animação: 15s, velocidade constante, repetição infinita */
+  }
+
+
+  .home-layout-content { 
+    display: flex; /* Habilita as colunas */
+    width: 100vw; 
+    max-width: none; 
+    margin: 0; 
+    padding: 0;
+    
+    /* Garante que a primeira tela seja preenchida (viewport height) */
+    /* Altura: 100% da tela - (Altura do Header + Animação + Footer) */
+    min-height: calc(100vh - 8rem - 2rem - 4rem); 
+}
+
+/* ---------------------------------- */
+/* 1.1 Coluna Esquerda: Ilustração    */
+/* ---------------------------------- */
+
+    .left-illustration {
+        flex: 1; 
+        background-color: #000; /* ESSENCIAL: Mantém a cor de fundo caso a imagem falhe */
+        
+        /* Caminho Corrigido: Entra em 'assets', depois em 'images' */
+        background-image: url('assets/images/lobisomem.jpg'); 
+        
+        background-size: cover;      
+        background-position: center; 
+        min-height: 100%;
+    }
+    
+
+
+/* ---------------------------------- */
+/* 1.2 Coluna Direita: Padrão e Texto */
+/* ---------------------------------- */
+
+.right-pattern {
+    flex: 1; /* Ocupa 50% da largura */
+    background-color: var(--bg-color); 
+    
+    
+    /* Centraliza o texto sobre o fundo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: left; 
+    text-align: left;
+    padding: 2rem;
+}
+
+/* Estilos para o Título de Exploração */
+.explore-title {
+    font-size: 3.5rem; 
+    font-weight: 100;
+    line-height: 1.1;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+    text-transform: none;
+}
+
+/* Estilos para o Subtítulo de Exploração */
+.explore-subtitle {
+    font-size: 1rem; 
+    font-weight: 300;
+    color: var(--tertiary-color);
+    max-width: 80%;
+}
+
+
+/* ========================================================= */
+/* 2. FRASE ANIMADA (Marquee CSS Moderna)                    */
+/* ========================================================= */
+
+/* Define a animação de rolagem contínua */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100); 
+  }
+  100% {
+    /* Move o conteúdo 50% de sua largura total para rolar a primeira cópia para fora */
+    transform: translateX(-100%); 
+  }
+}
+
+/* Container que define a área visível e esconde o excesso */
+.animated-phrase-container {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    font-size: 1rem;
+    padding: 1rem 0;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden; 
+    border-top: 0px solid var(--primary-color);
+    border-bottom: 0px solid var(--primary-color);
+    margin-top: 0; 
+    width: 100%;
+}
+
+/* O conteúdo real que se move (deve ter o texto duplicado no HTML) */
+.animated-phrase-content {
+    display: inline-block; 
+    white-space: nowrap; 
+    padding-right: 20px; 
+    padding-left: 100;
+    animation: scroll-left 25s linear infinite; /* 15s é a velocidade */
+}
+
+
+/* ========================================================= */
+/* 3. RESPONSIVIDADE (Ajusta o layout em telas menores)      */
+/* ========================================================= */
+
+@media (max-width: 768px) {
+    /* Quebra o layout de duas colunas em pilha para telas pequenas */
+    .home-layout-content {
+        flex-direction: column; 
+        height: auto; 
+        min-height: auto;
+        overflow-y: auto; 
+    }
+
+    .left-illustration {
+        min-height: 50vh; /* Garante que a ilustração ainda tenha uma altura visível */
+        bottom: #000;
+        background-image: url('lobisomem.jpg'); 
+        width: 100%;
+    }
+    
+    .explore-title {
+        font-size: 2.5rem;
+    }
+}
+
+
+
+.fonte-especial {
+    font-family: "Jim Nightshade", cursive;
+    font-weight: 700;
+    color: var(--tertiary-color)
+
+}
+
+/* ========================================================= */
+/* ESTILOS DOS CARDS (Resultados de Busca)                   */
+/* ========================================================= */
+
+.card-container {
+    /* 1. LAYOUT DE GRADE (GRID) - Cria as colunas responsivas */
+    display: grid;
+    /* Define colunas que se ajustam automaticamente, com largura mínima de 300px */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem; /* Espaçamento entre os cards */
+    padding: 0rem;
+    margin: 8rem; /* Centraliza a seção */
+    max-width: 300rem; /* Limite de largura para a grade */
+    
+    /* Esta linha é crucial para garantir que os cards apareçam
+       após a busca (como definido no script.js) */
+    display: none; 
+}
+
+/* 2. ESTILO INDIVIDUAL DO CARD */
+.card {
+    background-color: var(--secondary-color); /* Cor de fundo escura do card (como na imagem) */
+    color: var(--bg-color); /* Cor do texto no card */
+    border-radius: 0.5rem;
+    overflow: hidden; /* Garante que a imagem fique dentro das bordas arredondadas */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    min-height: 50px; /* Garante que os cards tenham uma altura mínima uniforme */
+    padding: 20px;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efeito sutil ao passar o mouse */
+}
+
+/* 3. ESTILO DA IMAGEM */
+.card-image-placeholder img {
+    width: 100%;
+    height: 100px; /* Altura fixa para a imagem */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer (cortando o excesso) */
+    display: block;
+}
+
+/* 4. ESTILO DO CONTEÚDO DE TEXTO */
+.card-content {
+    padding: 0rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content h2 {
+    font-size: 1.8rem;
+    margin: 0rem;
+    color: var(--bg-color); /* Título na cor clara */
+}
+
+.card-region {
+    font-size: 0.9rem;
+    color: rgba(253, 245, 221, 0.7); /* Cor do texto mais discreta */
+    margin-bottom: 0.5rem;
+}
+
+.card-description {
+    font-size: 1rem;
+    flex-grow: 1; /* Permite que a descrição ocupe o espaço restante */
+    margin-bottom: 0.5rem;
+}
+
+.card-link {
+    color: var(--bg-color);
+    text-decoration: underline;
+    font-weight: 500;
+    align-self: right; /* Alinha o link no canto esquerdo */
+}
+ html, body {
+    height:100%;
+    margin: 0;
+ }
+
+body {
+    display:flex;
+    flex-direction: column;
+}
+
+footer{
+    margin-top: auto;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 10px;
+}
+
+.card {
+    background: #22190c;
+    color: #fff;
+    padding: 5px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: fit-content;
+    gap: 20px;
+    box-shadow: 0 4px 10px rgba(65, 53, 36, 0.253);
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat (auto-fit, minmax(280px, 1fr));
+    gap: 10px;
+}
+
+.card {
+    font-family: "Goudy Bookletter 1911", serif;
+    padding: 13px;
+    border-radius: 10px;
+    font-weight: 100;
+}
+
+.card-nome {
+    font-family: "Jim Nightshade", cursive;
+    font-weight: 500;
+    color: var(--tertiary-color)
+}
+
+.creditos {
+    text-align: center;
+    padding: 0px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-top: 40px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+
+footer.creditos {
+    margin-top: auto;
+}
